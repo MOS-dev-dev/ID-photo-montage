@@ -1,0 +1,7 @@
+{
+    "eye_position_variance": 1.2,
+    "head_margin_variance": 1.5,
+    "face_height_variance": 2.1,
+    "frame_coverage": 100.0,
+    "ghost_alignment_offset": 0
+}

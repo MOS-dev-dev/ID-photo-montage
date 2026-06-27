@@ -1,0 +1,24 @@
+{
+    "total": 800,
+    "passed": 781,
+    "failed": 19,
+    "pass_rate": 97.625,
+    "attempt_distribution": {
+        "attempt_1": 508,
+        "attempt_2": 0,
+        "attempt_3": 0,
+        "attempt_4": 273
+    },
+    "detector_distribution": {
+        "mediapipe_landmarker": 740,
+        "mediapipe_detection": 1,
+        "opencv_dnn": 40,
+        "adaptive_recovery": 0
+    },
+    "failure_reasons": {
+        "face_not_detected": 19,
+        "invalid_image": 0,
+        "reframing_exhausted": 0,
+        "other": 0
+    }
+}

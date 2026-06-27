@@ -1,0 +1,19 @@
+{
+  "main_frame": {
+    "x": 485,
+    "y": 960,
+    "width": 490,
+    "height": 650
+  },
+  "ghost_frame": {
+    "x": 1004,
+    "y": 1096,
+    "width": 228,
+    "height": 269
+  },
+  "mask_blur_radius": 5,
+  "eye_position_min": 0.44,
+  "eye_position_max": 0.46,
+  "head_margin_min": 0.08,
+  "shoulder_visibility_min": 0.24
+}

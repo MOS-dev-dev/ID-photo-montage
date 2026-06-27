@@ -1,0 +1,7 @@
+{
+    "landmarker": 67,
+    "landmarker_recovery": 33,
+    "mediapipe_detection": 0,
+    "opencv_dnn": 0,
+    "pseudo_landmark": 0
+}

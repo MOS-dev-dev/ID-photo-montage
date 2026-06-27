@@ -1,0 +1,502 @@
+{
+    "golden_000.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_001.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_002.jpg": {
+        "head_margin": 21,
+        "face_height": 641,
+        "eye_position_y": 218
+    },
+    "golden_003.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_004.jpg": {
+        "head_margin": 12,
+        "face_height": 616,
+        "eye_position_y": 225
+    },
+    "golden_005.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_006.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_007.jpg": {
+        "head_margin": 58,
+        "face_height": 604,
+        "eye_position_y": 223
+    },
+    "golden_008.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_009.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_010.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_011.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_012.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_013.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_014.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_015.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_016.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_017.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_018.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_019.jpg": {
+        "head_margin": 21,
+        "face_height": 641,
+        "eye_position_y": 218
+    },
+    "golden_020.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_021.jpg": {
+        "head_margin": 12,
+        "face_height": 616,
+        "eye_position_y": 225
+    },
+    "golden_022.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_023.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_024.jpg": {
+        "head_margin": 58,
+        "face_height": 604,
+        "eye_position_y": 223
+    },
+    "golden_025.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_026.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_027.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_028.jpg": {
+        "head_margin": 21,
+        "face_height": 641,
+        "eye_position_y": 218
+    },
+    "golden_029.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_030.jpg": {
+        "head_margin": 12,
+        "face_height": 616,
+        "eye_position_y": 225
+    },
+    "golden_031.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_032.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_033.jpg": {
+        "head_margin": 58,
+        "face_height": 604,
+        "eye_position_y": 223
+    },
+    "golden_034.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_035.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_036.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_037.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_038.jpg": {
+        "head_margin": 21,
+        "face_height": 641,
+        "eye_position_y": 218
+    },
+    "golden_039.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_040.jpg": {
+        "head_margin": 12,
+        "face_height": 616,
+        "eye_position_y": 225
+    },
+    "golden_041.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_042.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_043.jpg": {
+        "head_margin": 58,
+        "face_height": 604,
+        "eye_position_y": 223
+    },
+    "golden_044.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_045.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_046.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_047.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_048.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_049.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_050.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_051.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_052.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_053.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_054.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_055.jpg": {
+        "head_margin": 21,
+        "face_height": 641,
+        "eye_position_y": 218
+    },
+    "golden_056.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_057.jpg": {
+        "head_margin": 12,
+        "face_height": 616,
+        "eye_position_y": 225
+    },
+    "golden_058.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_059.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_060.jpg": {
+        "head_margin": 58,
+        "face_height": 604,
+        "eye_position_y": 223
+    },
+    "golden_061.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_062.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_063.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_064.jpg": {
+        "head_margin": 21,
+        "face_height": 641,
+        "eye_position_y": 218
+    },
+    "golden_065.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_066.jpg": {
+        "head_margin": 12,
+        "face_height": 616,
+        "eye_position_y": 225
+    },
+    "golden_067.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_068.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_069.jpg": {
+        "head_margin": 58,
+        "face_height": 604,
+        "eye_position_y": 223
+    },
+    "golden_070.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_071.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_072.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_073.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_074.jpg": {
+        "head_margin": 21,
+        "face_height": 641,
+        "eye_position_y": 218
+    },
+    "golden_075.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_076.jpg": {
+        "head_margin": 12,
+        "face_height": 616,
+        "eye_position_y": 225
+    },
+    "golden_077.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_078.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_079.jpg": {
+        "head_margin": 58,
+        "face_height": 604,
+        "eye_position_y": 223
+    },
+    "golden_080.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_081.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_082.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_083.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_084.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_085.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_086.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_087.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_088.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_089.jpg": {
+        "head_margin": 0,
+        "face_height": 653,
+        "eye_position_y": 228
+    },
+    "golden_090.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    },
+    "golden_091.jpg": {
+        "head_margin": 21,
+        "face_height": 641,
+        "eye_position_y": 218
+    },
+    "golden_092.jpg": {
+        "head_margin": 0,
+        "face_height": 421,
+        "eye_position_y": 162
+    },
+    "golden_093.jpg": {
+        "head_margin": 12,
+        "face_height": 616,
+        "eye_position_y": 225
+    },
+    "golden_094.jpg": {
+        "head_margin": 18,
+        "face_height": 644,
+        "eye_position_y": 225
+    },
+    "golden_095.jpg": {
+        "head_margin": 0,
+        "face_height": 397,
+        "eye_position_y": 162
+    },
+    "golden_096.jpg": {
+        "head_margin": 58,
+        "face_height": 604,
+        "eye_position_y": 223
+    },
+    "golden_097.jpg": {
+        "head_margin": 0,
+        "face_height": 662,
+        "eye_position_y": 223
+    },
+    "golden_098.jpg": {
+        "head_margin": 0,
+        "face_height": 440,
+        "eye_position_y": 167
+    },
+    "golden_099.jpg": {
+        "head_margin": 10,
+        "face_height": 652,
+        "eye_position_y": 223
+    }
+}
