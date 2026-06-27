@@ -19,3 +19,12 @@ sample_outputs/
 *.tflite
 *.task
 *.pbtxt
+
+# Added by antigravity
+node_modules/
+tmp/
+backend/tmp/
+backend/outputs/
+*.zip
+*.rar
+.env

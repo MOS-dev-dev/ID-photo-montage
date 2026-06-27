@@ -1,50 +1,47 @@
-# ID Photo Montage Tool
+# Web Application: Card Generator
 
-A tool designed for creating and montaging ID photos onto blank templates. It utilizes computer vision and image processing techniques to automate face detection, background removal, and layout generation for ID cards.
+Dự án đã được nâng cấp từ tool Desktop (Tkinter) lên Web Application (FastAPI + React Vite), đồng thời tích hợp **V2.1 Background Erasure Patch**.
 
-## Features
+## Cấu trúc thư mục
 
-- **Automated Face Detection**: Uses MediaPipe and OpenCV DNN for robust face detection across different angles and lighting conditions.
-- **Background Removal**: Integrates `rembg` (with MediaPipe Selfie Segmenter as fallback) to cleanly extract portraits from their original backgrounds.
-- **Image Enhancement**: Features image normalization techniques like CLAHE to improve portrait quality before compositing.
-- **Template Compositing**: Accurately places the processed portrait, text data (name, DOB, address, ID number), and holograms onto a predefined ID card template based on precise coordinate configurations.
-- **Batch Processing**: Reads data from a connected Google Sheets document to process multiple ID cards automatically.
-- **GUI Interface**: Built with Tkinter for easy configuration and execution.
-- **Validation and Testing**: Includes scripts for visual regression, stress testing, and benchmark generation.
+- `backend/`: Chứa mã nguồn FastAPI server.
+  - `main.py`: Entry point API endpoint `/api/upload`, `/api/preview`, `/api/generate`.
+  - `pipeline/`: Chứa các module tách lẻ (`detector.py`, `background.py`, `crop.py`, `render.py`).
+- `frontend/`: Chứa mã nguồn React.
+  - `src/`: Các file components React (`App.jsx`, `CanvasEditor.jsx`, `Controls.jsx`, `Upload.jsx`).
 
-## Requirements
+## Hướng dẫn chạy (Local)
 
-- Python 3.x
-- Dependencies: `opencv-python`, `numpy`, `Pillow`, `mediapipe`, `pandas`, `rembg`
-
-Install the required packages:
-
+### 1. Khởi chạy Backend (FastAPI)
+Chạy file `start_backend.bat` hoặc sử dụng lệnh:
 ```bash
-pip install opencv-python numpy Pillow mediapipe pandas rembg
+cd backend
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-## Usage
+Server sẽ lắng nghe tại `http://localhost:8000`.
 
-1. Configure the `template_config.json` with appropriate coordinates and settings if needed.
-2. Update the `EXCEL_URL` in `tool_tao_the.py` to point to your data source.
-3. Ensure the blank template (`blank_template.png`) and necessary model files (`deploy.prototxt`, `res10_300x300_ssd_iter_140000.caffemodel`, `face_landmarker.task`, `blaze_face_short_range.tflite`) are in the root directory.
-4. Run the main script:
-
+### 2. Khởi chạy Frontend (React Vite)
+Chạy file `start_frontend.bat` hoặc sử dụng lệnh:
 ```bash
-python tool_tao_the.py
+cd frontend
+npm run dev
 ```
-*(Or use `run_tool.bat` on Windows)*
 
-Processed ID cards will be saved in the `output_cards` directory.
+Mở trình duyệt tại `http://localhost:3000`.
 
-## Project Structure
+### 3. Open Browser
+Trình duyệt sẽ mở giao diện sử dụng tại địa chỉ `http://localhost:3000` (nếu có Node.js).
 
-- `tool_tao_the.py`: Main execution script containing GUI and image processing logic.
-- `template_config.json`: Configuration for template positioning.
-- `blank_template.png`: The base ID card template.
-- `benchmark_pipeline.py`, `run_final_validation.py`, etc.: Scripts for testing and validating outputs.
-- `download_models.py`: Helper script to download required ML models.
 
-## License
-
-MIT License
+## Cách sử dụng Web App
+1. **Upload**: Kéo thả ảnh chân dung vào ô bên trái.
+2. **Khung hình (Framing)**: Ở giữa là giao diện CanvasEditor. 
+   - Backend sẽ tự động loại bỏ phông nền của ảnh gốc bằng công nghệ Rembg (hoặc Selfie Segmenter) và trả về ảnh tách nền chuẩn (chưa crop).
+   - Bạn có thể **kéo, di chuyển, phóng to, thu nhỏ, hoặc xoay** hình người bên trong khung để căn góc tùy ý.
+3. **Tuỳ chỉnh ảnh**: Ở cột bên phải, sử dụng slider để chỉnh:
+   - **Brightness** (Mặc định 1.0)
+   - **Contrast** (Mặc định 1.0)
+   - **Saturation** (Mặc định 1.0)
+4. **Tạo thẻ**: Nhấn `GENERATE CARD`. Hệ thống sẽ gửi tọa độ khung hình (`x, y, scale, rotation`) về backend để tiến hành xử lý `Background Erasure V2.1`, làm mờ print-feel (3%), body fade (100% -> 85%), bo góc cứng và chèn chữ, hologram vào phôi gốc.
+5. Ảnh thành phẩm sẽ hiển thị bên dưới ô Upload để tải về.

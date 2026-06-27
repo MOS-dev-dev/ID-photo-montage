@@ -1,0 +1,12 @@
+{
+  "name": "id-card-system",
+  "version": "1.0.0",
+  "scripts": {
+    "backend": "cd backend && uvicorn main:app --reload --port 8000",
+    "frontend": "cd frontend && npm run dev -- --port 3000",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
