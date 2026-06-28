@@ -279,7 +279,7 @@ def process_portrait(face_path, template_img=None, debug_id=None):
 
     
     # ==========================================
-    # BACKGROUND BLENDING SYSTEM V1.2
+    # BACKGROUND ERASURE PATCH V2.1
     # ==========================================
     r, g, b, a = fit_img.split()
     rgb_arr = np.array(Image.merge('RGB', (r,g,b)))
@@ -287,33 +287,69 @@ def process_portrait(face_path, template_img=None, debug_id=None):
     
     if debug_id:
         os.makedirs('debug', exist_ok=True)
-        fit_img.save(f"debug/{debug_id}_01_original.png")
-        a.save(f"debug/{debug_id}_02_alpha_mask.png")
+        fit_img.save(f"debug/{debug_id}_01_rembg_raw.png")
+        a.save(f"debug/{debug_id}_02_alpha_before.png")
+        
+    # 2.1. ALPHA HARD SEPARATION
+    hard_a = a_arr.copy()
+    hard_a[a_arr < 40] = 0
     
-    # 2. EDGE CLEANUP
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
-    a_arr = cv2.morphologyEx(a_arr, cv2.MORPH_CLOSE, kernel)
-    a_arr = cv2.GaussianBlur(a_arr, (7, 7), 0)
-    
-    # 3. COLOR DECONTAMINATION (Khử Halo xịn bằng Premultiplied Blur)
-    fg_only = rgb_arr.copy()
-    fg_only[a_arr < 220] = 0
-    mask_float = (a_arr >= 220).astype(np.float32)
-    fg_float = fg_only.astype(np.float32)
-    
-    blur_mask = cv2.GaussianBlur(mask_float, (31, 31), 0)
-    blur_fg = cv2.GaussianBlur(fg_float, (31, 31), 0)
-    blur_mask[blur_mask == 0] = 1.0 # avoid div zero
-    
-    decontaminated_rgb = (blur_fg / blur_mask[:, :, None])
-    np.clip(decontaminated_rgb, 0, 255, out=decontaminated_rgb)
-    decontaminated_rgb = decontaminated_rgb.astype(np.uint8)
-    
-    edge_mask = ((a_arr > 20) & (a_arr < 220))
-    rgb_arr[edge_mask] = decontaminated_rgb[edge_mask]
+    rgb_hard = rgb_arr.copy()
+    rgb_hard[hard_a == 0] = 0
     
     if debug_id:
-        Image.fromarray(rgb_arr).save(f"debug/{debug_id}_03_decontamination.png")
+        Image.fromarray(np.dstack((rgb_hard, hard_a))).save(f"debug/{debug_id}_03_hard_cut.png")
+        
+    # 2.2. FOREGROUND COLOR RECONSTRUCTION (Premultiplied Blur)
+    transition_mask = (a_arr >= 40) & (a_arr <= 220)
+    
+    a_float = a_arr.astype(np.float32) / 255.0
+    p_float = rgb_arr.astype(np.float32) * a_float[:, :, None]
+    
+    pb = cv2.GaussianBlur(p_float, (31, 31), 0)
+    ab = cv2.GaussianBlur(a_float, (31, 31), 0)
+    ab[ab == 0] = 1.0 
+    
+    rgb_new = pb / ab[:, :, None]
+    np.clip(rgb_new, 0, 255, out=rgb_new)
+    rgb_new = rgb_new.astype(np.uint8)
+    
+    if debug_id:
+        Image.fromarray(rgb_new).save(f"debug/{debug_id}_04_color_rebuild.png")
+        
+    # 2.3. EDGE DECONTAMINATION & COLOR SPILL REMOVAL (HSV Scan)
+    kernel = np.ones((5,5), np.uint8)
+    a_dilate = cv2.dilate(a_arr, kernel, iterations=1)
+    edge_pixels = (a_dilate - a_arr) > 0
+    
+    rgb_arr[transition_mask] = rgb_new[transition_mask]
+    
+    R = rgb_arr[:, :, 0].astype(np.int32)
+    G = rgb_arr[:, :, 1].astype(np.int32)
+    B = rgb_arr[:, :, 2].astype(np.int32)
+    
+    blue_dom = B > (R * 1.2)
+    gray_dom = (np.abs(R - G) < 10) & (np.abs(G - B) < 10)
+    spill_mask = edge_pixels & (blue_dom | gray_dom)
+    
+    hard_a_float = hard_a.astype(np.float32)
+    hard_a_float[spill_mask] *= 0.5
+    hard_a = hard_a_float.astype(np.uint8)
+    
+    if debug_id:
+        Image.fromarray(np.dstack((rgb_arr, hard_a))).save(f"debug/{debug_id}_05_edge_cleanup.png")
+        
+    # 2.4. ALPHA FEATHER
+    edge_mask_for_blur = cv2.dilate(a_arr, np.ones((3,3), np.uint8), iterations=1) - cv2.erode(a_arr, np.ones((3,3), np.uint8), iterations=1)
+    a_blurred = cv2.GaussianBlur(hard_a, (5, 5), 0)
+    
+    final_a = hard_a.copy()
+    final_a[edge_mask_for_blur > 0] = a_blurred[edge_mask_for_blur > 0]
+    
+    a_arr = final_a
+    
+    if debug_id:
+        Image.fromarray(np.dstack((rgb_arr, a_arr))).save(f"debug/{debug_id}_06_final_rgba.png")
     
     # 4. PORTRAIT COLOR MATCHING & LOCAL ADAPTATION
     local_bg_brightness = 0.5
@@ -450,7 +486,7 @@ def make_id_card(row, template_img, font_id, font_name, font_dob, font_reg, pic2
     card.alpha_composite(holo_img, (HOLO_LEFT, HOLO_TOP))
     
     if debug_id:
-        card.convert("RGB").save(f"debug/{debug_id}_08_final_card.png")
+        card.convert("RGB").save(f"debug/{debug_id}_07_composite.png")
         
     draw = ImageDraw.Draw(card)
     text_color = (0, 0, 0)
